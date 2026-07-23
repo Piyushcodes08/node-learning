@@ -1,0 +1,2 @@
+{"Name":"Rahul","Department":"IT","Salary":50000}
+age:25
