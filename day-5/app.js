@@ -10,14 +10,6 @@
 const fs = require("fs");
 
 
-fs.writeFile("student.txt", "hello node.js i m piyush", (err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("file created succesfully");
-    }
-})
-
 
 
 // employee.txt create karo.
@@ -90,4 +82,30 @@ fs.writeFile("studentdata.txt", JSON.stringify(studentData), (err)=>{
 });
 
 
+// studentDetails.txt banao.
+// Usme apna Name, Age aur City likho.
+// readFile() se read karke console me print karo.
+// Ek baar "utf8" ke saath aur ek baar bina "utf8" ke run karo aur output ka difference dekho.
+
+const studentDetails = {
+    Name : "piyush",
+    Age : 25 ,
+    City : "Ahmedabad",
+}
+
+
+fs.writeFile("studentDetails.txt" , JSON.stringify(studentDetails) , (err)=>{
+    if (err) {
+        console.log(err)
+        return;
+    }
+    console.log("data print succesfully");
+fs.readFile("studentDetails.txt" , "utf8" , (err , data)=>{
+    if (err) {
+        console.log(err)
+    }else{
+        console.log(data)
+    }
+});
+});
 
